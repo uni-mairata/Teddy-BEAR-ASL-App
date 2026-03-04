@@ -1,27 +1,34 @@
 <!--Make the main screen permanent.
     It means it's created only once when the UI is created and never deleted. -->
-<screen permanent="true">
+<screen permanent="false">
 	<view>
-		<lv_label text="Main screen  (permanent)" align="top_mid" y="10" />
+		<lv_label text="Select the ASL sign to practice" align="top_mid" y="10" />
 
 		<!-- If set value on this slider, go to About screen and come back here
 		     the value will remain as the "permanent" screens are not recreated. -->
-		<lv_slider align="center" />
+		<!-- <lv_slider align="center" /> -->
 
 		<!-- Just to explain what should happen -->
-		<lv_label
+		<!-- <lv_label
 			text="I'm on a permanent screen,&#10; so my state will stay"
 			y="-30"
 			align="center"
 			style_text_align="center"
-		/>
+		/> -->
 
 		<!-- This button should open the About screen  -->
-		<lv_button align="bottom_mid" y="-10">
-			<lv_label text="About" />
-			<!-- Since the About screen is not permanent <screen_create_event>
+		<!-- <lv_button align="bottom_mid" y="-10">
+			<lv_label text="About" /> -->
+		<!-- Since the About screen is not permanent <screen_create_event>
 			     shall be used to create it dynamically.  -->
-			<screen_create_event screen="screen_about" anim_type="move_top" duration="500" />
-		</lv_button>
+		<!-- <screen_create_event screen="screen_about" anim_type="move_top" duration="500" />
+		</lv_button> -->
+		<lv_buttonmatrix
+			align="bottom_mid"
+			width="320"
+			height="200"
+			map="{'A', 'B', 'C', 'D', '\n', 'E', 'F', 'G', 'H', '\n', 'I', 'J', 'K', 'L', '\n', 'M', 'N', 'O', 'P', '\n', 'Q', 'R', 'S', 'T', '\n', 'U', 'V', 'W', 'X', '\n', 'Y', 'Z'}"
+			scrollbar_mode="on"
+		/>
 	</view>
 </screen>
