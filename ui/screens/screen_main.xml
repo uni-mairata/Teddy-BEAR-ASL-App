@@ -27,8 +27,16 @@
 			align="bottom_mid"
 			width="320"
 			height="200"
-			map="{'A', 'B', 'C', 'D', '\n', 'E', 'F', 'G', 'H', '\n', 'I', 'J', 'K', 'L', '\n', 'M', 'N', 'O', 'P', '\n', 'Q', 'R', 'S', 'T', '\n', 'U', 'V', 'W', 'X', '\n', 'Y', 'Z'}"
+			map="{'A', 'B', 'C', 'D', '\n',
+					'E', 'F', 'G', 'H', '\n', 
+					'I', 'J', 'K', 'L', '\n', 
+					'M', 'N', 'O', 'P', '\n', 
+					'Q', 'R', 'S', 'T', '\n', 
+					'U', 'V', 'W', 'X', '\n',
+					'Y', 'Z', NULL}"
 			scrollbar_mode="on"
-		/>
+		>
+			<screen_create_event screen="screen_about" anim_type="move_top" duration="500" />
+		</lv_buttonmatrix>
 	</view>
 </screen>
