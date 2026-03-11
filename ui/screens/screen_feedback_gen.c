@@ -1,5 +1,5 @@
 /**
- * @file screen_about_gen.c
+ * @file screen_feedback_gen.c
  * @brief Template source file for LVGL objects
  */
 
@@ -7,7 +7,7 @@
  *      INCLUDES
  *********************/
 
-#include "screen_about_gen.h"
+#include "screen_feedback_gen.h"
 #include "../ui_screens.h"
 
 /*********************
@@ -30,7 +30,7 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-lv_obj_t * screen_about_create(void)
+lv_obj_t * screen_feedback_create(void)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
@@ -43,7 +43,7 @@ lv_obj_t * screen_about_create(void)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
-    lv_obj_set_name_static(lv_obj_0, "screen_about_#");
+    lv_obj_set_name_static(lv_obj_0, "screen_feedback_#");
     lv_obj_set_style_bg_color(lv_obj_0, lv_color_hex(0x041d3a), 0);
     lv_obj_set_style_text_color(lv_obj_0, lv_color_hex3(0xfff), 0);
 

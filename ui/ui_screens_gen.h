@@ -92,7 +92,7 @@ void ui_screens_init_gen(const char * asset_path);
  **********************/
 
 /*Include all the widgets, components and screens of this library*/
-#include "screens/screen_about_gen.h"
+#include "screens/screen_feedback_gen.h"
 #include "screens/screen_main_gen.h"
 
 #ifdef __cplusplus

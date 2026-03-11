@@ -66,7 +66,7 @@ lv_obj_t * screen_main_create(void)
     lv_obj_t * lv_label_2 = lv_label_create(lv_button_0);
     lv_label_set_text(lv_label_2, "About");
     
-    lv_obj_add_screen_create_event(lv_button_0, LV_EVENT_CLICKED, screen_about_create, LV_SCREEN_LOAD_ANIM_MOVE_TOP, 500, 0);
+    lv_obj_add_screen_create_event(lv_button_0, LV_EVENT_CLICKED, screen_feedback_create, LV_SCREEN_LOAD_ANIM_MOVE_TOP, 500, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
 
