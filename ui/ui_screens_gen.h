@@ -29,9 +29,15 @@ extern "C" {
  *      DEFINES
  *********************/
 
-#define DARK_BLUE lv_color_hex(0x003762)
+#define DARK_BLUE lv_color_hex(0x264653)
 
-#define YELLOW lv_color_hex(0xda9d19)
+#define YELLOW lv_color_hex(0xe9c46a)
+
+#define TEAL lv_color_hex(0x2a9d8f)
+
+#define VIBRANT_YELLOW lv_color_hex(0xf9c74f)
+
+#define ORANGE lv_color_hex(0xf4a261)
 
 #define UNIT_SMALL 6
 
