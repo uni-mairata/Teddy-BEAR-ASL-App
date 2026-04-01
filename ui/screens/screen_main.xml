@@ -2,7 +2,15 @@
     It means it's created only once when the UI is created and never deleted. -->
 <screen permanent="false">
 	<view>
-		<lv_label text="Choose a letter to practice the ASL sign!" align="top_mid" y="14" />
+		<lv_button width="50" height="35" x="7" y="4" />
+		<lv_label
+			text="Choose a letter to practice the ASL sign!"
+			align="top_mid"
+			y="3"
+			width="239"
+			height="38"
+			x="26"
+		/>
 
 		<lv_obj
 			align="bottom_mid"
