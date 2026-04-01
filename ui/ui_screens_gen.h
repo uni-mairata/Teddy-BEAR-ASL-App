@@ -19,8 +19,10 @@ extern "C" {
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
     #include "lvgl.h"
+    #include "src/core/lv_obj_class_private.h"
 #else
     #include "lvgl/lvgl.h"
+    #include "lvgl/src/core/lv_obj_class_private.h"
 #endif
 
 
@@ -56,8 +58,6 @@ extern "C" {
 /*-------------------
  * Permanent screens
  *------------------*/
-
-extern lv_obj_t * screen_main;
 
 /*----------------
  * Global styles

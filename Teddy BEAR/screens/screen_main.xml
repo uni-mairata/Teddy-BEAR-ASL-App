@@ -1,0 +1,37 @@
+<screen permanent="false">
+	<view>
+		<lv_button width="50" height="35" x="7" y="4" style_bg_color="0xf4a261">
+			<lv_label text="power off" />
+		</lv_button>
+		<lv_label
+			text="Choose a letter to practice the ASL sign!"
+			align="top_mid"
+			x="26"
+			y="3"
+			width="239"
+			height="38"
+		/>
+		<lv_obj
+			align="bottom_mid"
+			width="310"
+			height="200"
+			scrollbar_mode="auto"
+			scroll_momentum=""
+			scroll_snap_x="center"
+			style_bg_color="0xe9c46a"
+		>
+			<lv_buttonmatrix
+				width="300"
+				height="470"
+				style_bg_color="0xe9c46a"
+				style_border_color="0xe9c46a"
+				map="{'A', 'B', 'C', 'D', '\n', 'E', 'F', 'G', 'H', '\n', 'I', 'J', 'K', 'L', '\n', 'M', 'N', 'O', 'P', '\n', 'Q', 'R', 'S', 'T', '\n', 'U', 'V', 'W', 'X', '\n', 'Y', 'Z', NULL}"
+				align="top_mid"
+			>
+				<!-- <subject_set_string_event trigger="clicked" subject="selected_letter" value="B" /> -->
+				<subject_set_string_event trigger="value_changed" subject="selected_letter" value="$selected" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_buttonmatrix>
+		</lv_obj>
+	</view>
+</screen>

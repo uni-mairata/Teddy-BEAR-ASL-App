@@ -30,88 +30,48 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-// lv_obj_t * screen_feedback_create(void)
-// {
-//     LV_TRACE_OBJ_CREATE("begin");
-
-
-//     static bool style_inited = false;
-
-//     if (!style_inited) {
-
-//         style_inited = true;
-//     }
-
-//     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
-//     lv_obj_set_name_static(lv_obj_0, "screen_feedback_#");
-//     lv_obj_set_style_bg_color(lv_obj_0, lv_color_hex(0x041d3a), 0);
-//     lv_obj_set_style_text_color(lv_obj_0, lv_color_hex3(0xfff), 0);
-
-//     lv_obj_t * lv_label_0 = lv_label_create(lv_obj_0);
-//     lv_label_set_text(lv_label_0, "About screen (dynamically created)");
-//     lv_obj_set_align(lv_label_0, LV_ALIGN_TOP_MID);
-//     lv_obj_set_y(lv_label_0, 10);
-    
-//     lv_obj_t * lv_slider_0 = lv_slider_create(lv_obj_0);
-//     lv_obj_set_align(lv_slider_0, LV_ALIGN_CENTER);
-    
-//     lv_obj_t * lv_label_1 = lv_label_create(lv_obj_0);
-//     lv_label_set_text(lv_label_1, "I'm NOT on a permanent screed,\n so my state will be lost");
-//     lv_obj_set_y(lv_label_1, -30);
-//     lv_obj_set_align(lv_label_1, LV_ALIGN_CENTER);
-//     lv_obj_set_style_text_align(lv_label_1, LV_TEXT_ALIGN_CENTER, 0);
-    
-//     lv_obj_t * lv_button_0 = lv_button_create(lv_obj_0);
-//     lv_obj_set_align(lv_button_0, LV_ALIGN_BOTTOM_MID);
-//     lv_obj_set_y(lv_button_0, -10);
-//     lv_obj_t * lv_label_2 = lv_label_create(lv_button_0);
-//     lv_label_set_text(lv_label_2, "Back");
-    
-//     lv_obj_add_screen_load_event(lv_button_0, LV_EVENT_CLICKED, screen_main, LV_SCREEN_LOAD_ANIM_MOVE_BOTTOM, 500, 0);
-
-//     LV_TRACE_OBJ_CREATE("finished");
-
-//     return lv_obj_0;
-// }
-
 lv_obj_t * screen_feedback_create(void)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
+
     static bool style_inited = false;
+
     if (!style_inited) {
+
         style_inited = true;
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
     lv_obj_set_name_static(lv_obj_0, "screen_feedback_#");
-    lv_obj_set_style_bg_color(lv_obj_0, lv_color_hex(0x264653), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(lv_obj_0, LV_OPA_COVER, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(lv_obj_0, lv_color_hex(0xffffff), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(lv_obj_0, lv_color_hex(0x264653), 0);
+    lv_obj_set_style_text_color(lv_obj_0, lv_color_hex3(0xfff), 0);
 
     lv_obj_t * lv_label_0 = lv_label_create(lv_obj_0);
     lv_label_set_text(lv_label_0, "ASL sign you chose: ");
     lv_obj_set_align(lv_label_0, LV_ALIGN_TOP_LEFT);
-    lv_obj_set_pos(lv_label_0, 10, 10);
-
+    lv_obj_set_x(lv_label_0, 10);
+    lv_obj_set_y(lv_label_0, 10);
+    
     lv_obj_t * lv_label_1 = lv_label_create(lv_obj_0);
     lv_label_set_text(lv_label_1, "Detected ASL sign:");
+    lv_obj_set_y(lv_label_1, -30);
+    lv_obj_set_x(lv_label_1, 10);
     lv_obj_set_align(lv_label_1, LV_ALIGN_LEFT_MID);
-    lv_obj_set_pos(lv_label_1, 10, -30);
     lv_obj_set_style_text_align(lv_label_1, LV_TEXT_ALIGN_CENTER, 0);
-
+    
     lv_obj_t * lv_button_0 = lv_button_create(lv_obj_0);
     lv_obj_set_align(lv_button_0, LV_ALIGN_BOTTOM_RIGHT);
-    lv_obj_set_pos(lv_button_0, -10, -10);
-    lv_obj_set_style_bg_color(lv_button_0, lv_color_hex(0x2a9d8f), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(lv_button_0, LV_OPA_COVER, LV_PART_MAIN | LV_STATE_DEFAULT);
-
+    lv_obj_set_y(lv_button_0, -10);
+    lv_obj_set_x(lv_button_0, -10);
+    lv_obj_set_style_bg_color(lv_button_0, lv_color_hex(0x2a9d8f), 0);
     lv_obj_t * lv_label_2 = lv_label_create(lv_button_0);
     lv_label_set_text(lv_label_2, "Back");
-
-    lv_obj_add_screen_load_event(lv_button_0, LV_EVENT_CLICKED, &screen_main, screen_main_create, LV_SCREEN_LOAD_ANIM_MOVE_BOTTOM, 500, 0);
+    
+    lv_obj_add_screen_load_event(lv_button_0, LV_EVENT_CLICKED, screen_main, LV_SCREEN_LOAD_ANIM_MOVE_BOTTOM, 500, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
+
     return lv_obj_0;
 }
 
