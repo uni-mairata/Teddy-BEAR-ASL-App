@@ -13,13 +13,13 @@ from kivy.uix.scrollview import ScrollView
 
 
 # -----------------------------
-# Main Menu Screen (A–Z buttons, scrollable, square, tight spacing)
+# Main Menu Screen
 # -----------------------------
 class MenuScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        # Outer layout with generous padding (creates border)
+        # Outer layout with padding
         outer_layout = BoxLayout(orientation="vertical", spacing=10, padding=40)
 
         # Title text
@@ -36,8 +36,8 @@ class MenuScreen(Screen):
         # Grid of buttons (5 per row), minimal spacing
         grid = GridLayout(
             cols=5,
-            spacing=4,       # very small spacing between buttons
-            padding=4,       # minimal padding inside grid
+            # spacing=4,       # very small spacing between buttons
+            # padding=4,       # minimal padding inside grid
             size_hint_y=None
         )
         grid.bind(minimum_height=grid.setter("height"))
@@ -48,7 +48,7 @@ class MenuScreen(Screen):
                 text=letter,
                 font_size=40,
                 size_hint_y=None,
-                height=140  # fixed height; width will match height
+                height=140
             )
             btn.bind(size=self.make_square)
             btn.bind(on_release=lambda b: self.go_to_detail(b.text))
