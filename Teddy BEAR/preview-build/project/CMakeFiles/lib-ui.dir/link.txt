@@ -1,0 +1,2 @@
+/emsdk/upstream/emscripten/emar qc liblib-ui.a CMakeFiles/lib-ui.dir/screens/screen_feedback_gen.c.o CMakeFiles/lib-ui.dir/screens/screen_main_gen.c.o CMakeFiles/lib-ui.dir/Teddy_BEAR_gen.c.o CMakeFiles/lib-ui.dir/Teddy_BEAR.c.o
+/emsdk/upstream/emscripten/emranlib liblib-ui.a
