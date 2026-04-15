@@ -11,8 +11,9 @@ from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.core.text import LabelBase
+from kivy.core.window import Window
 
-LabelBase.register(name="Icons", fn_regular="MaterialIcons-Regular.ttf")
+LabelBase.register(name="Icons", fn_regular="material-design-icons/font/MaterialIcons-Regular.ttf")
 
 
 # -----------------------------
@@ -38,6 +39,7 @@ class MenuScreen(Screen):
             width=20,
             height=20
         )
+        exit_button.bind(on_press=self.exit_app)
         inner_layout = BoxLayout(orientation="horizontal", size_hint=(1, None), height=60)
         inner_layout.add_widget(exit_btn)
         inner_layout.add_widget(title)
@@ -66,7 +68,6 @@ class MenuScreen(Screen):
                 height=160
             )
 
-            # btn.bind(size=self.make_square)
             btn.bind(on_release=lambda b: self.go_to_feedback(b.text))
             grid.add_widget(btn)
 
@@ -78,6 +79,10 @@ class MenuScreen(Screen):
         feedback = self.manager.get_screen("feedback")
         feedback.update_text(text)
         self.manager.current = "feedback"
+
+    def exit_app(self, instance): 
+        App.get_running_app().stop()
+        Window.close() # Close window entirely
 
 
 # -----------------------------
