@@ -10,6 +10,9 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
+from kivy.core.text import LabelBase
+
+LabelBase.register(name="Icons", fn_regular="MaterialIcons-Regular.ttf")
 
 
 # -----------------------------
@@ -29,13 +32,16 @@ class MenuScreen(Screen):
             size_hint=(1, 0.15)
         )
         exit_btn = Button(
-            text="power",
-            font_size=30,
+            text="\ue8ac",
+            font_size=16,
+            size_hint=(None, None),
             width=20,
             height=20
         )
-        outer_layout.add_widget(exit_btn)
-        outer_layout.add_widget(title)
+        inner_layout = BoxLayout(orientation="horizontal", size_hint=(1, None), height=60)
+        inner_layout.add_widget(exit_btn)
+        inner_layout.add_widget(title)
+        outer_layout.add_widget(inner_layout)
 
         # Scrollable area
         scroll = ScrollView(size_hint=(1, 0.85))
