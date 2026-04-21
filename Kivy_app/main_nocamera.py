@@ -34,8 +34,8 @@ class MenuScreen(Screen):
 
         # Outer layout with padding
         outer_layout = BoxLayout(
-            orientation="vertical", 
-            spacing=10, 
+            orientation="vertical",
+            spacing=10,
             padding=40
         )
 
@@ -57,17 +57,17 @@ class MenuScreen(Screen):
             background_normal='',
             background_color=(217/255, 191/255, 119/255, 1) # D9BF77
         )
-        logo = Image(
-            source='Teddy_BEAR_logo.png', 
-            size_hint=(None,None), 
-            size=(700, 30),
-            width=200, 
-            height=200)
-        inner_layout = BoxLayout(
-            orientation="horizontal", 
-            size_hint=(1, None), 
-            height=60)
         exit_btn.bind(on_press=self.exit_app)
+        logo = Image(
+            source='Teddy_BEAR_logo.png',
+            size_hint=(None,None),
+            size=(700, 30),
+            width=100,
+            height=100)
+        inner_layout = BoxLayout(
+            orientation="horizontal",
+            size_hint=(1, None),
+            height=60)
         inner_layout.add_widget(exit_btn)
         inner_layout.add_widget(title)
         inner_layout.add_widget(logo)
@@ -119,12 +119,12 @@ class MenuScreen(Screen):
             # self.manager.current = "feedback"
             # run_game(start_letter=text) # TODO: UNCOMMENT THIS AFTER UI DESIGNING IS DONE
             Clock.schedule_once(lambda dt: self.end_cooldown(), 3) # Should wait for 3 seconds
-    
+
     def end_cooldown(self):
         self.btn_cooldown = False
 
 
-    def exit_app(self, instance): 
+    def exit_app(self, instance):
         App.get_running_app().stop()
         Window.close() # Close window entirely
 
