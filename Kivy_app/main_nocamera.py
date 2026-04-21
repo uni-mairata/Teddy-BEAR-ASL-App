@@ -44,16 +44,17 @@ class MenuScreen(Screen):
             text="Choose the ASL sign you want to learn!",
             font_size=32,
             size_hint=(None, None),
-            size=(670, 60),
+            size=(680, 100),
             valign="middle"
         )
         exit_btn = Button(
             text="\ue8ac",
-            font_size=30,
+            font_size=50,
             font_name="Icons",
             size_hint=(None, None),
-            width=70,
-            height=70,
+            width=100,
+            height=100,
+            pos_hint={"center_y": 0.4},
             background_normal='',
             background_color=(217/255, 191/255, 119/255, 1) # D9BF77
         )
@@ -61,17 +62,19 @@ class MenuScreen(Screen):
         logo = Image(
             source='Teddy_BEAR_logo.png',
             size_hint=(None,None),
-            size=(700, 30),
-            width=100,
-            height=100)
-        inner_layout = BoxLayout(
+            x=30,
+            width=140,
+            height=140,
+            pos_hint={"center_y": 0.4}
+        )
+        top_bar = BoxLayout(
             orientation="horizontal",
             size_hint=(1, None),
-            height=60)
-        inner_layout.add_widget(exit_btn)
-        inner_layout.add_widget(title)
-        inner_layout.add_widget(logo)
-        outer_layout.add_widget(inner_layout)
+            height=100)
+        top_bar.add_widget(logo)
+        top_bar.add_widget(title)
+        top_bar.add_widget(exit_btn)
+        outer_layout.add_widget(top_bar)
 
         # Scrollable area
         #scroll = ScrollView(size_hint=(1, 0.85))
