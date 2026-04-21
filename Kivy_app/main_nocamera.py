@@ -30,16 +30,21 @@ class MenuScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        Window.clearcolor = (69/255, 123/255, 157/255, 1) # 457B9D
+
         # Outer layout with padding
-        outer_layout = BoxLayout(orientation="vertical", spacing=10, padding=40)
+        outer_layout = BoxLayout(
+            orientation="vertical", 
+            spacing=10, 
+            padding=40
+        )
 
         # Title text
         title = Label(
-            text="Choose the ASL sign you want to learn",
+            text="Choose the ASL sign you want to learn!",
             font_size=32,
-            #size_hint=(1, 0.15),
             size_hint=(None, None),
-            size=(600, 70),
+            size=(670, 60),
             valign="middle"
         )
         exit_btn = Button(
@@ -48,20 +53,31 @@ class MenuScreen(Screen):
             font_name="Icons",
             size_hint=(None, None),
             width=70,
-            height=70
+            height=70,
+            background_normal='',
+            background_color=(217/255, 191/255, 119/255, 1) # D9BF77
         )
+        logo = Image(
+            source='Teddy_BEAR_logo.png', 
+            size_hint=(None,None), 
+            size=(700, 30),
+            width=200, 
+            height=200)
+        inner_layout = BoxLayout(
+            orientation="horizontal", 
+            size_hint=(1, None), 
+            height=60)
         exit_btn.bind(on_press=self.exit_app)
-        logo = Image(source='Teddy_BEAR_logo.png')
-        inner_layout = BoxLayout(orientation="horizontal", size_hint=(1, None), height=60)
         inner_layout.add_widget(exit_btn)
         inner_layout.add_widget(title)
         inner_layout.add_widget(logo)
         outer_layout.add_widget(inner_layout)
 
         # Scrollable area
-        scroll = ScrollView(size_hint=(1, 0.85))
+        #scroll = ScrollView(size_hint=(1, 0.85))
+        scroll = ScrollView(size_hint=(None, None), width=1000, height=430)
 
-        # Grid of buttons (5 per row), minimal spacing
+        # Grid of buttons (5 per row)
         grid = GridLayout(
             cols=5,
             spacing=15,       # spacing between buttons
@@ -77,9 +93,9 @@ class MenuScreen(Screen):
                 text=letter,
                 font_size=40,
                 size_hint=(None, None),
-                width=160,
-                height=160,
-                background_color=(233/255, 196/255, 106/255, 1)  # e9c46a
+                width=170,
+                height=170,
+                background_color=(168/255, 218/255, 220/255, 1)  # A8DADC
             )
 
             # btn.bind(on_release=lambda b: self.go_to_feedback(b.text))
